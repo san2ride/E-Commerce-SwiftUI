@@ -61,3 +61,6 @@ fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
 SmartShop/IntelligentShop/.DS_Store
+SmartShop-Server/node_modules/.DS_Store
+SmartShop-Server/.DS_Store
+.DS_Store
