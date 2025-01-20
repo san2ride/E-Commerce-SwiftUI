@@ -14,7 +14,7 @@ app.get('/automobile', (req, res) => {
     res.json(automobile)
 })
 
-app-post('/automobile', (req, res) => {
+app.post('/automobile', (req, res) => {
     const { brand, style } = req.body
     res.send ('OK')
 })
