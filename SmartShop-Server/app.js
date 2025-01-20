@@ -14,6 +14,11 @@ app.get('/automobile', (req, res) => {
     res.json(automobile)
 })
 
+app-post('/automobile', (req, res) => {
+    const { brand, style } = req.body
+    res.send ('OK')
+})
+
 app.get('/automobile/:suv/year/:year', (req, res) => {
     const suv = req.params.suv
     const year = req.params.year
