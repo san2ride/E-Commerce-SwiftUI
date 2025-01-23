@@ -9,5 +9,6 @@ import Foundation
 
 struct AuthenticationController {
     
+    let httpClient: HTTPClient
     
 }
