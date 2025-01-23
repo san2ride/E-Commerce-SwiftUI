@@ -2,10 +2,13 @@ const express = require('express')
 const models = require('./models')
 const { Op } = require('sequelize');
 const bcrypt = require('bcryptjs')
+const cors = require('cors')
 const { body, validationResult } = require('express-validator');
 const { where } = require('sequelize');
 const app = express()
 
+// CORS
+app.use(cors())
 // JSON parser
 app.use(express.json())
 
