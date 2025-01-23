@@ -13,9 +13,26 @@ struct RegistrationScreen: View {
     
     @State private var username: String = ""
     @State private var password: String = ""
+    @State private var message: String = ""
     
     private var isFormValid: Bool {
         !username.isEmptyOrWhitespace && !password.isEmptyOrWhitespace
+    }
+    
+    private func register() async {
+        do {
+            let response = try await authenticationController.register(username: username, password: password)
+            
+            if response.success {
+                dismiss()
+            } else {
+                message = response.message ?? ""
+            }
+        } catch {
+            message = error.localizedDescription
+        }
+        username = ""
+        password = ""
     }
     
     var body: some View {
@@ -24,8 +41,12 @@ struct RegistrationScreen: View {
                 .textInputAutocapitalization(.never)
             SecureField("Password", text: $password)
             Button("Register") {
-                
-            }.disabled(isFormValid)
+                Task {
+                    await register()
+                }
+            }.disabled(!isFormValid)
+            
+            Text(message)
         }.navigationTitle("Register")
     }
 }
