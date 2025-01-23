@@ -1,0 +1,14 @@
+//
+//  Constants.swift
+//  IntelligentShop
+//
+//  Created by Jason Sanchez on 1/22/25.
+//
+
+import Foundation
+
+struct Constants {
+    struct Urls {
+        static let register: URL = URL(string: "http://localhost:8080/api/auth/register")!
+    }
+}
