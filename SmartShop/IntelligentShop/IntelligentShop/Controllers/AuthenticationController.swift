@@ -20,3 +20,9 @@ struct AuthenticationController {
         return response
     }
 }
+
+extension AuthenticationController {
+    static var development: AuthenticationController {
+        AuthenticationController(httpClient: HTTPClient())
+    }
+}

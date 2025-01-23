@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct RegistrationScreen: View {
+    @Environment(\.authenticationController) private var authenticationController
+    @Environment(\.dismiss) private var dismiss
+    
     @State private var username: String = ""
     @State private var password: String = ""
     
     private var isFormValid: Bool {
-        !username.isEmpty && !password.isEmpty
+        !username.isEmptyOrWhitespace && !password.isEmptyOrWhitespace
     }
     
     var body: some View {
@@ -22,7 +25,7 @@ struct RegistrationScreen: View {
             SecureField("Password", text: $password)
             Button("Register") {
                 
-            }.disabled(true)
+            }.disabled(isFormValid)
         }.navigationTitle("Register")
     }
 }
@@ -30,5 +33,5 @@ struct RegistrationScreen: View {
 #Preview {
     NavigationStack {
         RegistrationScreen()
-    }
+    }.environment(\.authenticationController, .development)
 }
