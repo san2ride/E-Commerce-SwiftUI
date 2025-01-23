@@ -11,7 +11,12 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		F73C90622D346F75000F1919 /* IntelligentShop */ = {
+		F7F06D3D2D41DA4300263239 /* Preview Content */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F7F06D4C2D41DA9100263239 /* IntelligentShop */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = IntelligentShop;
 			sourceTree = "<group>";
@@ -32,7 +37,8 @@
 		F73C90572D346F74000F1919 = {
 			isa = PBXGroup;
 			children = (
-				F73C90622D346F75000F1919 /* IntelligentShop */,
+				F7F06D4C2D41DA9100263239 /* IntelligentShop */,
+				F7F06D3D2D41DA4300263239 /* Preview Content */,
 				F73C90612D346F75000F1919 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,7 +67,8 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				F73C90622D346F75000F1919 /* IntelligentShop */,
+				F7F06D3D2D41DA4300263239 /* Preview Content */,
+				F7F06D4C2D41DA9100263239 /* IntelligentShop */,
 			);
 			name = IntelligentShop;
 			packageProductDependencies = (
