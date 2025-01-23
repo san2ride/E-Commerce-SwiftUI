@@ -17,7 +17,7 @@ const registerValidator = [
     body('password', 'password cannot be empty!').not().isEmpty()
 ]
 
-app.post('/register', registerValidator, async (req, res) => {
+app.post('/api/auth/register', registerValidator, async (req, res) => {
     const errors = validationResult(req)
     console.log(errors)
     if (!errors.isEmpty()) {
