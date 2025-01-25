@@ -8,6 +8,12 @@ const registerValidator = [
     body('password', 'password cannot be empty!').not().isEmpty()
 ]
 
+const loginValidator = [
+    body('username', 'username cannot be empty!').not().isEmpty(),
+    body('password', 'password cannot be empty!').not().isEmpty()
+]
+
 router.post('/register', registerValidator, authController.register)
+router.post('/login', loginValidator, authController.login)
 
 module.exports = router
