@@ -18,7 +18,6 @@ struct LoginResponse: Codable {
     let success: Bool
     let userId: Int?
     let username: String?
-    
 }
 
 struct ErrorResponse: Codable {
