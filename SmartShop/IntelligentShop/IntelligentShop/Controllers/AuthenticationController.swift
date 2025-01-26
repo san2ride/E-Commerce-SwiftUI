@@ -19,6 +19,10 @@ struct AuthenticationController {
         
         return response
     }
+    
+    func login(username: String, password: String) async throws -> LoginResponse {
+        
+    }
 }
 
 extension AuthenticationController {
