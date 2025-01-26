@@ -28,6 +28,11 @@ struct LoginScreen: View {
                 message = response.message ?? "Request cannot be completed."
                 return
             }
+            print(token)
+            
+            // set token in keychain
+            Keychain.set(token, forKey: "jwttoken")
+            
             // set userId in user defaults
             self.userId = userId
         } catch {
@@ -49,7 +54,11 @@ struct LoginScreen: View {
             }.disabled(!isFormValid)
             
             Text(message)
-        }.navigationTitle("Login")
+        }
+        .navigationDestination(item: $userId, destination: { _ in
+            Text("Home Screen")
+        })
+        .navigationTitle("Login")
     }
 }
 
