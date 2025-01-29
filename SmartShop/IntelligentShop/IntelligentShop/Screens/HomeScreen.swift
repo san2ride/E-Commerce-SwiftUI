@@ -44,7 +44,7 @@ extension AppScreen {
                 Text("Cart")
                     .requiresAuthentication()
             case .profile:
-                Text("Profile")
+                ProfileScreen()
                     .requiresAuthentication()
         }
     }
