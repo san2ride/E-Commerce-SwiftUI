@@ -23,23 +23,29 @@ extension AppScreen {
             case .home:
                 Label("Home", systemImage: "heart")
             case .myProducts:
-                Label("", systemImage: "star")
+                Label("My Products", systemImage: "star")
             case .cart:
                 Label("Cart", systemImage: "cart")
             case .profile:
                 Label("Profile", systemImage: "person.fill")
         }
     }
+    @ViewBuilder
     var destination: some View {
         switch self {
             case .home:
                 Text("Home")
             case .myProducts:
-                Text("My Products")
+                NavigationStack {
+                    Text("My Products")
+                        .requiresAuthentication()
+                }
             case .cart:
                 Text("Cart")
+                    .requiresAuthentication()
             case .profile:
                 Text("Profile")
+                    .requiresAuthentication()
         }
     }
 }
