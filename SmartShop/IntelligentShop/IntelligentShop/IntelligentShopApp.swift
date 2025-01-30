@@ -9,10 +9,13 @@ import SwiftUI
 
 @main
 struct IntelligentShopApp: App {
+    @State private var productStore = ProductStore(httpClient: HTTPClient())
+    
     var body: some Scene {
         WindowGroup {
-                HomeScreen()
-            .environment(\.authenticationController, .development)
+            HomeScreen()
+                .environment(\.authenticationController, .development)
+                .environment(productStore)
         }
     }
 }
