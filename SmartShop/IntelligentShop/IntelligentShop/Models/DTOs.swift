@@ -35,6 +35,16 @@ struct Product: Codable, Identifiable {
     }
 }
 
+extension Product {
+    static var preview: Product {
+        Product(id: 1, name: "RESIDENTIAL PEST CONTROL",
+                description: "We offer comprehensive pest control solutions for your home, ensuring a safe, comfortable environment free from unwanted pests..",
+                price: 200,
+                photoUrl: URL(string: "http://localhost:8080/uploads/star_pest.png")!,
+                userId: 8)
+    }
+}
+
 struct ErrorResponse: Codable {
     let message: String?
 }
