@@ -8,11 +8,23 @@
 import SwiftUI
 
 struct ProductListScreen: View {
+    @Environment(ProductStore.self) private var productStore
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List(productStore.products) { product in
+            Text(product.name)
+        }.task {
+            do {
+                try await productStore.loadAllProducts()
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
     }
 }
 
 #Preview {
-    ProductListScreen()
+    NavigationStack {
+        ProductListScreen()
+    }.environment(ProductStore(httpClient: .development))
 }
