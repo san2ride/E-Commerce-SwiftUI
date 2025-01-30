@@ -1,9 +1,12 @@
 const express = require('express')
 const cors = require('cors')
+
 const authRoutes = require('./routes/auth')
 const productRoutes = require('./routes/product')
 
 const app = express()
+
+app.use('/uploads',express.static('uploads'))
 
 // CORS
 app.use(cors())
