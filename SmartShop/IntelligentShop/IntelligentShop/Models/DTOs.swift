@@ -20,6 +20,21 @@ struct LoginResponse: Codable {
     let username: String?
 }
 
+struct Product: Codable, Identifiable {
+    var id: Int?
+    let name: String
+    let description: String
+    let price: Double
+    let photoUrl: URL?
+    let userId: Int
+    
+    private enum CodingKeys: String, CodingKey {
+        case id, name, description, price
+        case photoUrl = "photo_url"
+        case userId = "user_id"
+    }
+}
+
 struct ErrorResponse: Codable {
     let message: String?
 }
