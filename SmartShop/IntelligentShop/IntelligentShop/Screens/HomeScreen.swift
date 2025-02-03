@@ -37,15 +37,19 @@ extension AppScreen {
                 ProductListScreen()
             case .myProducts:
                 NavigationStack {
-                    Text("My Products")
+                    MyProductsListScreen()
                         .requiresAuthentication()
                 }
             case .cart:
-                Text("Cart")
-                    .requiresAuthentication()
+                NavigationStack {
+                    Text("Cart")
+                        .requiresAuthentication()
+                }
             case .profile:
-                ProfileScreen()
-                    .requiresAuthentication()
+                NavigationStack {
+                    ProfileScreen()
+                        .requiresAuthentication()
+                }
         }
     }
 }

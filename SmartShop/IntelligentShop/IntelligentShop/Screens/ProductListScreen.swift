@@ -12,7 +12,7 @@ struct ProductListScreen: View {
     
     var body: some View {
         List(productStore.products) { product in
-            Text(product.name)
+            ProductCellView(product: product)
         }.task {
             do {
                 try await productStore.loadAllProducts()
