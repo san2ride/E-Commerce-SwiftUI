@@ -43,8 +43,17 @@ extension Product {
                 photoUrl: URL(string: "http://localhost:8080/uploads/star_pest.png")!,
                 userId: 8)
     }
+    func encode() -> Data? {
+        try? JSONEncoder().encode(self)
+    }
 }
 
 struct ErrorResponse: Codable {
+    let message: String?
+}
+
+struct CreateProductResponse: Codable {
+    let success: Bool
+    let product: Product?
     let message: String?
 }
