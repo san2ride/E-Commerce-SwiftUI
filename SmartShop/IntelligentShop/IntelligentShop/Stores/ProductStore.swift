@@ -23,6 +23,11 @@ class ProductStore {
         products = try await httpClient.load(resource)
     }
     
+    func loadMyProducts(by userId: Int) async throws {
+        let resource = Resource(url: Constants.Urls.myProducts(userId), modelType: [Product].self)
+        myProducts = try await httpClient.load(resource)
+    }
+    
     func saveProduct(_ product: Product) async throws {
         let resource = Resource(url: Constants.Urls.createProducts,
                                 method: .post(product.encode()),
