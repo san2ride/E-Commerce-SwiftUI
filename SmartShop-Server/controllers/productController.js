@@ -7,6 +7,21 @@ exports.getAllProducts = async (req, res) => {
     res.json(products)
 }
 
+// /api/products/user/8
+exports.getMyProducts = async (req, res) => {
+    try {
+        const userId = req.params.userId
+        const products = await models.Product.findAll({
+            where: {
+                user_id: userId
+            }
+        })
+        res.json(products)
+    } catch (error) {
+        res.status(500).json({ message: 'Error retrieving products', success: false});
+    }
+}
+
 exports.create = async (req, res) => {
     const errors = validationResult(req)
 
