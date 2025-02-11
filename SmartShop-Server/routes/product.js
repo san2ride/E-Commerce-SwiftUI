@@ -15,4 +15,6 @@ router.get('/', productController.getAllProducts)
 router.post('/', productValidator, productController.create)
 router.get('/user/:userId', productController.getMyProducts)
 
+router.post('/upload', productController.upload)
+
 module.exports = router
