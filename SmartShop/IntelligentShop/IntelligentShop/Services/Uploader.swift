@@ -19,13 +19,18 @@ enum MimeType: String {
 struct Uploader {
     let httpClient: HTTPClient
     
-    func upload(data: Data, mimeType: MimeType = .png) async throws -> URL? {
+    func upload(data: Data, mimeType: MimeType = .png) async throws -> UploadDataResponse? {
         let boundary = UUID().uuidString
         let headers = ["Content-Type": "multipart/form-data; boundary=\(boundary)"]
         
         // create multi part form body
-        
-        return nil
+        let body = createMultipartFormDataBody(data: data, boundary: boundary)
+        let resource = Resource(url: Constants.Urls.uploadProductImage,
+                                method: .post(body),
+                                headers: headers,
+                                modelType: UploadDataResponse.self)
+        let response = try await httpClient.load(resource)
+        return response
     }
     
     private func createMultipartFormDataBody(data: Data, mimeType: MimeType = .png, boundary: String) -> Data {

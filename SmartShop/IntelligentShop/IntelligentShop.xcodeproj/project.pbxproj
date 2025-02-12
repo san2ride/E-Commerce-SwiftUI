@@ -11,6 +11,7 @@
 		F73288052D515FB200A33C24 /* MyProductListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73288042D515FB200A33C24 /* MyProductListScreen.swift */; };
 		F73288072D51627000A33C24 /* AddProductScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73288062D51627000A33C24 /* AddProductScreen.swift */; };
 		F7BD2B222D5C334400E2BF29 /* Uploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BD2B212D5C334400E2BF29 /* Uploader.swift */; };
+		F7BD2B242D5C3CF700E2BF29 /* UploaderEnviromentKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BD2B232D5C3CF400E2BF29 /* UploaderEnviromentKey.swift */; };
 		F7CAF1C02D513E8400F6120F /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CAF1BF2D513E8400F6120F /* Errors.swift */; };
 		F7EF47792D4C2192003123E8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7EF47662D4C2192003123E8 /* Preview Assets.xcassets */; };
 		F7EF477A2D4C2192003123E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7EF47752D4C2192003123E8 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 		F73288062D51627000A33C24 /* AddProductScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductScreen.swift; sourceTree = "<group>"; };
 		F73C90602D346F75000F1919 /* IntelligentShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntelligentShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7BD2B212D5C334400E2BF29 /* Uploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uploader.swift; sourceTree = "<group>"; };
+		F7BD2B232D5C3CF400E2BF29 /* UploaderEnviromentKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploaderEnviromentKey.swift; sourceTree = "<group>"; };
 		F7CAF1BF2D513E8400F6120F /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		F7EF475C2D4C2192003123E8 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		F7EF475E2D4C2192003123E8 /* AuthenticationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationController.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 		F7EF47612D4C2192003123E8 /* Enviroment Values */ = {
 			isa = PBXGroup;
 			children = (
+				F7BD2B232D5C3CF400E2BF29 /* UploaderEnviromentKey.swift */,
 				F7EF47602D4C2192003123E8 /* AuthenticationEnvironmentKey.swift */,
 			);
 			path = "Enviroment Values";
@@ -323,6 +326,7 @@
 				F7EF47822D4C2192003123E8 /* ProductListScreen.swift in Sources */,
 				F7EF47832D4C2192003123E8 /* ProfileScreen.swift in Sources */,
 				F7EF47842D4C2192003123E8 /* RegistrationScreen.swift in Sources */,
+				F7BD2B242D5C3CF700E2BF29 /* UploaderEnviromentKey.swift in Sources */,
 				F7EF47902D4C27C6003123E8 /* ProductCellView.swift in Sources */,
 				F7EF47852D4C2192003123E8 /* Constants.swift in Sources */,
 				F7EF47862D4C2192003123E8 /* KeyChainWrapper.swift in Sources */,
