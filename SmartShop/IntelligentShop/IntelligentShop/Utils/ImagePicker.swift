@@ -11,9 +11,9 @@ import SwiftUI
 struct ImagePicker: UIViewControllerRepresentable {
     @Environment(\.dismiss) private var dismiss
     typealias UIViewControllerType = UIImagePickerController
-    var sourceType: UIImagePickerController.SourceType = .camera
     typealias Coordinator = ImagePickerCoordinator
     @Binding var image: UIImage?
+    var sourceType: UIImagePickerController.SourceType = .camera
     
     func makeCoordinator() -> ImagePicker.Coordinator {
         return ImagePickerCoordinator(self)

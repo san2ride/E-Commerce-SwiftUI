@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct AddProductScreen: View {
     
     @State private var name: String = ""
     @State private var description: String = ""
     @State private var price: Double?
+    @State private var selectedPhotoItem: PhotosPickerItem? = nil
+    @State private var isCameraSelected: Bool = false
+    @State private var uiImage: UIImage?
     
     @Environment(\.dismiss) private var dismiss
     
@@ -50,7 +54,43 @@ struct AddProductScreen: View {
             TextEditor(text: $description)
                 .frame(height: 100)
             TextField("Enter price", value: $price, format: .number)
-        }.toolbar {
+            HStack {
+                Button(action: {
+                    print("camera button")
+                    if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                        isCameraSelected = true
+                    } else {
+                        print("Camera is not supported on this device")
+                    }
+                }, label: {
+                    Image(systemName: "camera.fill")
+                })
+                PhotosPicker(selection: $selectedPhotoItem, matching: .images, photoLibrary: .shared()) {
+                    Image(systemName: "photo.on.rectangle")
+                }
+            }.font(.title2)
+            if let uiImage {
+                Image(uiImage: uiImage)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+            }
+        }
+        .onChange(of: selectedPhotoItem, {
+            selectedPhotoItem?.loadTransferable(type: Data.self, completionHandler: { result in
+                switch result {
+                    case .success(let data):
+                        if let data {
+                            uiImage = UIImage(data: data)
+                        }
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                }
+            })
+        })
+        .sheet(isPresented: $isCameraSelected, content: {
+            ImagePicker(image: $uiImage, sourceType: .camera)
+        })
+        .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("Save") {
                     Task {
