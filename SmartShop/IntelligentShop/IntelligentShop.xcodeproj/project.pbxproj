@@ -13,6 +13,7 @@
 		F7BD2B222D5C334400E2BF29 /* Uploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BD2B212D5C334400E2BF29 /* Uploader.swift */; };
 		F7BD2B242D5C3CF700E2BF29 /* UploaderEnviromentKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BD2B232D5C3CF400E2BF29 /* UploaderEnviromentKey.swift */; };
 		F7CAF1C02D513E8400F6120F /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CAF1BF2D513E8400F6120F /* Errors.swift */; };
+		F7D4DF462D642EF20080C995 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D4DF452D642EF20080C995 /* ImagePicker.swift */; };
 		F7EF47792D4C2192003123E8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7EF47662D4C2192003123E8 /* Preview Assets.xcassets */; };
 		F7EF477A2D4C2192003123E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7EF47752D4C2192003123E8 /* Assets.xcassets */; };
 		F7EF477B2D4C2192003123E8 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EF475C2D4C2192003123E8 /* HTTPClient.swift */; };
@@ -42,6 +43,7 @@
 		F7BD2B212D5C334400E2BF29 /* Uploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uploader.swift; sourceTree = "<group>"; };
 		F7BD2B232D5C3CF400E2BF29 /* UploaderEnviromentKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploaderEnviromentKey.swift; sourceTree = "<group>"; };
 		F7CAF1BF2D513E8400F6120F /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		F7D4DF452D642EF20080C995 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		F7EF475C2D4C2192003123E8 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		F7EF475E2D4C2192003123E8 /* AuthenticationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationController.swift; sourceTree = "<group>"; };
 		F7EF47602D4C2192003123E8 /* AuthenticationEnvironmentKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationEnvironmentKey.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 			children = (
 				F7EF476E2D4C2192003123E8 /* Constants.swift */,
 				F7EF476F2D4C2192003123E8 /* KeyChainWrapper.swift */,
+				F7D4DF452D642EF20080C995 /* ImagePicker.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -199,17 +202,17 @@
 		F7EF47782D4C2192003123E8 /* IntelligentShop */ = {
 			isa = PBXGroup;
 			children = (
-				F7BD2B202D5C332B00E2BF29 /* Services */,
-				F7CAF1BE2D513E4500F6120F /* Custom Errors */,
 				F7EF47652D4C2192003123E8 /* Models */,
 				F7EF478E2D4C27A0003123E8 /* Views */,
 				F7EF475F2D4C2192003123E8 /* Controllers */,
+				F7EF476D2D4C2192003123E8 /* Screens */,
 				F7EF478B2D4C2199003123E8 /* Stores */,
 				F7EF475D2D4C2192003123E8 /* Clients */,
 				F7EF47612D4C2192003123E8 /* Enviroment Values */,
+				F7CAF1BE2D513E4500F6120F /* Custom Errors */,
 				F7EF47632D4C2192003123E8 /* Extensions */,
 				F7EF47672D4C2192003123E8 /* Preview Content */,
-				F7EF476D2D4C2192003123E8 /* Screens */,
+				F7BD2B202D5C332B00E2BF29 /* Services */,
 				F7EF47702D4C2192003123E8 /* Utils */,
 				F7EF47722D4C2192003123E8 /* Validators */,
 				F7EF47742D4C2192003123E8 /* View Modifiers */,
@@ -334,6 +337,7 @@
 				F73288052D515FB200A33C24 /* MyProductListScreen.swift in Sources */,
 				F7EF47882D4C2192003123E8 /* RequiresAuthentication.swift in Sources */,
 				F7EF47892D4C2192003123E8 /* ContentView.swift in Sources */,
+				F7D4DF462D642EF20080C995 /* ImagePicker.swift in Sources */,
 				F7EF478A2D4C2192003123E8 /* IntelligentShopApp.swift in Sources */,
 				F7EF478D2D4C21D2003123E8 /* ProductStore.swift in Sources */,
 			);
