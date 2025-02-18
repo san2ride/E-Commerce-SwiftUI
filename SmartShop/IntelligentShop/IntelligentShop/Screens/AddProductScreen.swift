@@ -18,7 +18,7 @@ struct AddProductScreen: View {
     @State private var uiImage: UIImage?
     
     @Environment(\.dismiss) private var dismiss
-    
+    @Environment(\.uploader) private var uploader
     @Environment(ProductStore.self) private var productStore
     @AppStorage("userId") private var userId: Int?
     
@@ -28,20 +28,28 @@ struct AddProductScreen: View {
     
     private func saveProduct() async {
         do {
+            guard let uiImage = uiImage, let imageData = uiImage.pngData() else {
+                throw ProductError.missingImage
+            }
+            let uploadDataResonse = try await uploader.upload(data: imageData)
+            
+            guard let downloadURL = uploadDataResonse.downloadURL, uploadDataResonse.success else {
+                throw ProductError.uploadFailed(uploadDataResonse.message ?? "")
+            }
+            print(downloadURL)
             
             guard let userid = userId else {
-                throw ProductSaveError.missingUserId
+                throw ProductError.missingUserId
             }
             guard let price = price else {
-                throw ProductSaveError.inavalidPrice
+                throw ProductError.inavalidPrice
             }
             let product = Product(name: name,
                                   description: description,
                                   price: price,
-                                  photoUrl: URL(string: "http://localhost:8080/uploads/star_pest.png")!,
+                                  photoUrl: downloadURL,
                                   userId: userid)
             try await productStore.saveProduct(product)
-            
             dismiss()
         } catch {
             print(error.localizedDescription)
@@ -106,4 +114,5 @@ struct AddProductScreen: View {
     NavigationStack {
         AddProductScreen()
     }.environment(ProductStore(httpClient: .development))
+        .environment(\.uploader, Uploader(httpClient: .development))
 }
