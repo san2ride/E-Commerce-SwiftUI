@@ -3,6 +3,7 @@ const models = require('../models')
 const multer = require('multer')
 const path = require('path')
 const { validationResult } = require('express-validator');
+const { where } = require('sequelize');
 
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
@@ -86,5 +87,34 @@ exports.create = async (req, res) => {
         res.status(201).json({ success: true, product: newProduct })
     } catch (error) {
         res.status(500).json({ message: "Internal server error", success: false });
+    }
+}
+
+exports.deleteProduct = async (req, res) => {
+    const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+        const msg = errors.array().map(error => error.msg).join('')
+        return res.status(422).json({ message: msg, success: false });
+    }
+
+    const productId = req.params.productId
+
+    try {
+        const product = await models.Product.findByPK(productId)
+        if(!product) {
+            return res.status(404).json({ message: 'Product not found', success: false });
+        }
+        // delete the product
+        const result = models.Product.destroy({
+            where: {
+                id: productId
+            }
+        })
+        if(result == 0 ) {
+            return res.status(200).json({ message: `Product with ID ${productId} deleted succesfully`, success: true });
+        }
+    } catch (err) {
+        return res.status(500).json({ message: `Error deleting product ${error.message}`, success: false });
     }
 }
