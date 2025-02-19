@@ -30,6 +30,7 @@ extension AppScreen {
                 Label("Profile", systemImage: "person.fill")
         }
     }
+    @MainActor
     @ViewBuilder
     var destination: some View {
         switch self {
