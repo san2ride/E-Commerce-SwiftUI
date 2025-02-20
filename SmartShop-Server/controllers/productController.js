@@ -4,6 +4,7 @@ const multer = require('multer')
 const path = require('path')
 const { validationResult } = require('express-validator');
 const { where } = require('sequelize');
+const { getFileNameFromUrl, deleteFile } = require('../Utils/fileUtils');
 
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
@@ -105,6 +106,8 @@ exports.deleteProduct = async (req, res) => {
         if(!product) {
             return res.status(404).json({ message: 'Product not found', success: false });
         }
+        const fileName = getFileNameFromUrl(product.photo_url)
+
         // delete the product
         const result = models.Product.destroy({
             where: {
@@ -112,8 +115,12 @@ exports.deleteProduct = async (req, res) => {
             }
         })
         if(result == 0 ) {
-            return res.status(200).json({ message: `Product with ID ${productId} deleted succesfully`, success: true });
+            return res.status(404).json({ message: 'Product not found', success: false });
         }
+        // delete the file
+        await deleteFile(fileName)
+        
+        return res.status(200).json({ message: `Product with ID ${productId} deleted succesfully`, success: true });
     } catch (err) {
         return res.status(500).json({ message: `Error deleting product ${error.message}`, success: false });
     }
