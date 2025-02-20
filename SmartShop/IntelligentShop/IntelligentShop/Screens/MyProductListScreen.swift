@@ -25,8 +25,13 @@ struct MyProductListScreen: View {
     
     var body: some View {
         List(productStore.myProducts) { product in
-            Text(product.name)
+            NavigationLink {
+                Text(product.name)
+            } label: {
+                MyProductCellView(product: product)
+            }
         }
+        .listStyle(.plain)
         .task {
             await loadMyProducts()
         }
@@ -43,6 +48,8 @@ struct MyProductListScreen: View {
         })
     }
 }
+
+
 
 #Preview {
     NavigationStack {
