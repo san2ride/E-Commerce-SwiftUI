@@ -3,7 +3,6 @@ const models = require('../models')
 const multer = require('multer')
 const path = require('path')
 const { validationResult } = require('express-validator');
-const { where } = require('sequelize');
 const { getFileNameFromUrl, deleteFile } = require('../Utils/fileUtils');
 
 const storage = multer.diskStorage({
@@ -69,13 +68,16 @@ exports.getMyProducts = async (req, res) => {
 }
 
 exports.create = async (req, res) => {
+    console.log('create')
     const errors = validationResult(req)
+    console.log(errors)
 
     if (!errors.isEmpty()) {
         const msg = errors.array().map(error => error.msg).join('')
         return res.status(422).json({ message: msg, success: false });
     }
     const { name, description, price, photo_url, user_id } = req.body
+    console.log(req.body)
 
     try {
         const newProduct = await models.Product.create({

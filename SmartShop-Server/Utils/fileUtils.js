@@ -1,10 +1,7 @@
-const { rejects } = require('assert');
 const fs = require('fs');
-const { url } = require('inspector');
 const path = require('path');
 
 // extract the filename from a url
-
 const getFileNameFromUrl = (photoUrl) => {
     try {
         const url = new URL(photoUrl)
@@ -19,7 +16,7 @@ const getFileNameFromUrl = (photoUrl) => {
 const deleteFile = (fileName) => {
     return new Promise((resolve, reject) => {
         if(!fileName) {
-            return path.resolve()
+            return resolve()
         }
         const fullImagePath = path.join(__dirname, '../uploads', fileName);
         fs.access(fullImagePath, fs.constants.F_OK, (accessErr) => {
