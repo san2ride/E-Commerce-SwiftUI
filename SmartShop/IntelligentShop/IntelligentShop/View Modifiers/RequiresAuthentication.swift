@@ -28,7 +28,6 @@ struct RequiresAuthentication: ViewModifier {
     }
     
     private func checkAuthentication() {
-        
         guard let token = Keychain<String>.get("jwttoken"), JWTTokenValidator.validate(token: token) else {
             userId = nil
             isLoading = false

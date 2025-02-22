@@ -17,7 +17,7 @@ struct MyProductListScreen: View {
             guard let userId = userId else {
                 throw UserError.missingId
             }
-            try await productStore.loadMyProducts(by: 9)
+            try await productStore.loadMyProducts(by: userId)
         } catch {
             print(error.localizedDescription)
         }

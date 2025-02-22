@@ -51,7 +51,6 @@ struct MyProductDetailScreen: View {
                     .frame(height: 44)
                     .cornerRadius(25)
             }.buttonStyle(.borderedProminent)
-            
         }.padding()
     }
 }
