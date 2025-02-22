@@ -38,7 +38,7 @@ exports.upload = async (req, res) => {
             return res.status(400).json({ message: err.message, success: false});
         }
         if(!req.file) {
-            return res.status(400).json({ message: 'No file iploaded', success: false });
+            return res.status(400).json({ message: 'No file uploaded', success: false });
         }
         const baseUrl = `${req.protocol}://${req.get('host')}`
         const filePath = `/api/uploads/${req.file.filename}`

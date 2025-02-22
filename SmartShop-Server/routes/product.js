@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const productController = require('../controllers/productController')
-const { body, param } = require('express-validator')
+const { body, param } = require('express-validator');
 
 const productValidator = [
     body('name', 'name cannot be empty.').not().isEmpty(),
