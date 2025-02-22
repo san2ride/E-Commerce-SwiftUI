@@ -3,16 +3,15 @@ const bcrypt = require('bcryptjs')
 const models = require('../models')
 const { Op } = require('sequelize');
 const { validationResult } = require('express-validator');
-const { json } = require('express');
 
 exports.login = async (req, res) => {
-    const errors = validationResult(req)
-    console.log(errors)
-    if (!errors.isEmpty()) {
-        const msg = errors.array().map(error => error.msg).join('')
-        return res.status(422).json({ success: false, message: msg })
-    }
     try {
+        // Validate input
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            const msg = errors.array().map(error => error.msg).join('')
+            return res.status(422).json({ message: msg, success: false });
+        }
         const { username, password } = req.body
 
         // check if user exists
@@ -34,7 +33,7 @@ exports.login = async (req, res) => {
         })
         return res.status(200).json({ userId: existingUser.id, username: existingUser.username, token, success: true })
     } catch (error) {
-        return res.status(500).json({ message: 'Internal server error', success: false })
+        return res.status(500).json({ message: 'Internal server error', success: false });
     }
 }
 
