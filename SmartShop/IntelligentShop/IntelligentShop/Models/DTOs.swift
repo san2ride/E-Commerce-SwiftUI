@@ -68,3 +68,8 @@ struct CreateProductResponse: Codable {
     let product: Product?
     let message: String?
 }
+
+struct DeleteProductResponse: Codable {
+    let success: Bool
+    let message: String?
+}

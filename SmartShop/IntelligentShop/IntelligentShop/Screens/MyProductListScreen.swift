@@ -26,7 +26,7 @@ struct MyProductListScreen: View {
     var body: some View {
         List(productStore.myProducts) { product in
             NavigationLink {
-                Text(product.name)
+                MyProductDetailScreen(product: product)
             } label: {
                 MyProductCellView(product: product)
             }
@@ -46,11 +46,13 @@ struct MyProductListScreen: View {
                 AddProductScreen()
             }
         })
+        .overlay(alignment: .center) {
+            if productStore.myProducts.isEmpty {
+                ContentUnavailableView("No products available", systemImage: "cart")
+            }
+        }
     }
 }
-
-
-
 #Preview {
     NavigationStack {
         MyProductListScreen()
