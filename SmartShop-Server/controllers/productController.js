@@ -123,6 +123,6 @@ exports.deleteProduct = async (req, res) => {
 
         return res.status(200).json({ message: `Product with ID ${productId} deleted succesfully`, success: true });
     } catch (err) {
-        return res.status(500).json({ message: `Error deleting product ${error.message}`, success: false });
+        return res.status(500).json({ message: `Error deleting product ${error.message} `, success: false });
     }
 }
