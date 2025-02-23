@@ -10,6 +10,13 @@ import Foundation
 enum MimeType: String {
     case jpg = "image/jpg"
     case png = "image/png"
+    case gif = "image/gif"
+    case bmp = "image/bmp"
+    case tiff = "image/tiff"
+    case pdf = "application/pdf"
+    case json = "application/json"
+    case html = "text/html"
+    case plainText = "text/plain"
     
     var value: String {
         return self.rawValue

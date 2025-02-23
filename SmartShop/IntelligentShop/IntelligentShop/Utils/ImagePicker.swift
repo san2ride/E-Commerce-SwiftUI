@@ -41,7 +41,7 @@ struct ImagePicker: UIViewControllerRepresentable {
             if let uiImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
                 self.picker.image = uiImage
             }
-            self .picker.dismiss()
+            self.picker.dismiss()
         }
         func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
             self.picker.dismiss()

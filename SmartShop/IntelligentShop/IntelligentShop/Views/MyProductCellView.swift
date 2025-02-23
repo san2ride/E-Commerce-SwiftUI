@@ -31,3 +31,9 @@ struct MyProductCellView: View {
         }
     }
 }
+
+#Preview {
+    NavigationStack {
+        MyProductCellView(product: Product.preview)
+    }.environment(ProductStore(httpClient: .development))
+}

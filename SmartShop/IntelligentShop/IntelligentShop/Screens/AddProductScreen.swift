@@ -112,6 +112,7 @@ struct AddProductScreen: View {
 #Preview {
     NavigationStack {
         AddProductScreen()
-    }.environment(ProductStore(httpClient: .development))
-        .environment(\.uploader, Uploader(httpClient: .development))
+    }
+    .environment(ProductStore(httpClient: .development))
+    .environment(\.uploader, Uploader(httpClient: .development))
 }

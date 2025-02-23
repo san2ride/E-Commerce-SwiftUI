@@ -120,6 +120,4 @@ extension HTTPClient {
     static var development: HTTPClient {
         HTTPClient()
     }
-    
 }
-
