@@ -12,8 +12,8 @@ const productValidator = [
 
 const deleteProductValidator = [
     param('productId')
-    .notEmpty().withMessage('ProductId is required.')
-    .isNumeric().withMessage('Product ID must be a number')
+        .notEmpty().withMessage('ProductId is required.')
+        .isNumeric().withMessage('Product ID must be a number')
 ]
 
 // /api/products
