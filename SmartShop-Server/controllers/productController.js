@@ -123,3 +123,44 @@ exports.deleteProduct = async (req, res) => {
         return res.status(500).json({ message: `Error deleting product ${error.message} `, success: false });
     }
 }
+
+exports.updateProduct = async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        const msg = errors.array().map(error => error.msg).join('')
+        return res.status(422).json({ message: msg, success: false });
+    }
+    try {
+        const { name, description, price, photo_url, user_id } = req.body
+        const { productId } = req.params
+
+        const product = await models.Product.findOne({
+            where: {
+                id: productId,
+                user_id: user_id
+            }
+        })
+        console.log(product)
+
+        if (!product) {
+            return res.status(404).json({ message: 'Product not found', success: false });
+        }
+        // update the product 
+        await product.update({
+            name,
+            description,
+            price,
+            photo_url
+        })
+        return res.status(200).json({
+            message: 'Product updated successfully',
+            success: true,
+            product
+        })
+    } catch (err) {
+        return res.status(500).json({
+            message: 'An error occurred while updating the product',
+            success: false
+        });
+    }
+}
