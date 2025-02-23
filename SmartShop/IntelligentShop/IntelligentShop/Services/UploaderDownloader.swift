@@ -23,7 +23,7 @@ enum MimeType: String {
     }
 }
 
-struct Uploader {
+struct UploaderDownloader {
     let httpClient: HTTPClient
     
     init(httpClient: HTTPClient) {
@@ -40,6 +40,11 @@ struct Uploader {
         let response = try await httpClient.load(resource)
         return response
     }
+    func download(from url: URL) async throws -> Data? {
+        let (data, _) = try await URLSession.shared.data(from: url)
+        return data
+    }
+    
     private func createMultipartFormDataBody(data: Data, mimeType: MimeType = .png, boundary: String) -> Data {
         var body = Data()
         

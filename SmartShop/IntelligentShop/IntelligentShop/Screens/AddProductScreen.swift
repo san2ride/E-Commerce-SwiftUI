@@ -20,7 +20,7 @@ struct AddProductScreen: View {
     @State private var uiImage: UIImage?
     
     @Environment(\.dismiss) private var dismiss
-    @Environment(\.uploader) private var uploader
+    @Environment(\.uploaderDownloader) private var uploaderDownloader
     @Environment(ProductStore.self) private var productStore
     @AppStorage("userId") private var userId: Int?
     
@@ -36,7 +36,7 @@ struct AddProductScreen: View {
             guard let uiImage = uiImage, let imageData = uiImage.pngData() else {
                 throw ProductError.missingImage
             }
-            let uploadDataResonse = try await uploader.upload(data: imageData)
+            let uploadDataResonse = try await uploaderDownloader.upload(data: imageData)
             
             guard let downloadURL = uploadDataResonse.downloadURL, uploadDataResonse.success else {
                 throw ProductError.uploadFailed(uploadDataResonse.message ?? "")
@@ -54,7 +54,7 @@ struct AddProductScreen: View {
                                   photoUrl: downloadURL,
                                   userId: userid)
             if self.product != nil {
-                // try await productStore.updateProduct(product)
+                 try await productStore.updateProduct(product)
             } else {
                 try await productStore.saveProduct(product)
             }
@@ -96,10 +96,21 @@ struct AddProductScreen: View {
             }
         }
         .task {
-            guard let product = product else { return }
-            name = product.name
-            description = product.description
-            price = product.price
+            do {
+                guard let product = product else { return }
+                name = product.name
+                description = product.description
+                price = product.price
+                
+                if let photoUrl = product.photoUrl {
+                    guard let data = try await uploaderDownloader.download(from: photoUrl) else {
+                        return
+                    }
+                    uiImage = UIImage(data: data)
+                }
+            } catch {
+                print(error.localizedDescription)
+            }
         }
         .task(id: selectedPhotoItem,  {
             if let selectedPhotoItem {
@@ -133,7 +144,7 @@ struct AddProductScreen: View {
         AddProductScreen()
     }
     .environment(ProductStore(httpClient: .development))
-    .environment(\.uploader, Uploader(httpClient: .development))
+    .environment(\.uploaderDownloader, UploaderDownloader(httpClient: .development))
 }
 
 #Preview("Updating Project") {
@@ -141,5 +152,5 @@ struct AddProductScreen: View {
         AddProductScreen(product: Product.preview)
     }
     .environment(ProductStore(httpClient: .development))
-    .environment(\.uploader, Uploader(httpClient: .development))
+    .environment(\.uploaderDownloader, UploaderDownloader(httpClient: .development))
 }

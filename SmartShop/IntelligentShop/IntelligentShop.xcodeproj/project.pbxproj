@@ -11,7 +11,7 @@
 		F73288052D515FB200A33C24 /* MyProductListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73288042D515FB200A33C24 /* MyProductListScreen.swift */; };
 		F73288072D51627000A33C24 /* AddProductScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73288062D51627000A33C24 /* AddProductScreen.swift */; };
 		F74C847C2D66E48200D912DF /* MyProductCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74C847B2D66E48200D912DF /* MyProductCellView.swift */; };
-		F7BD2B222D5C334400E2BF29 /* Uploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BD2B212D5C334400E2BF29 /* Uploader.swift */; };
+		F7BD2B222D5C334400E2BF29 /* UploaderDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BD2B212D5C334400E2BF29 /* UploaderDownloader.swift */; };
 		F7BD2B242D5C3CF700E2BF29 /* UploaderEnviromentKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BD2B232D5C3CF400E2BF29 /* UploaderEnviromentKey.swift */; };
 		F7CAF1C02D513E8400F6120F /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CAF1BF2D513E8400F6120F /* Errors.swift */; };
 		F7CE97902D696D6000FD2AF3 /* MyProductDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CE978F2D696D6000FD2AF3 /* MyProductDetailScreen.swift */; };
@@ -42,7 +42,7 @@
 		F73288062D51627000A33C24 /* AddProductScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductScreen.swift; sourceTree = "<group>"; };
 		F73C90602D346F75000F1919 /* IntelligentShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntelligentShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F74C847B2D66E48200D912DF /* MyProductCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProductCellView.swift; sourceTree = "<group>"; };
-		F7BD2B212D5C334400E2BF29 /* Uploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uploader.swift; sourceTree = "<group>"; };
+		F7BD2B212D5C334400E2BF29 /* UploaderDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploaderDownloader.swift; sourceTree = "<group>"; };
 		F7BD2B232D5C3CF400E2BF29 /* UploaderEnviromentKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploaderEnviromentKey.swift; sourceTree = "<group>"; };
 		F7CAF1BF2D513E8400F6120F /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		F7CE978F2D696D6000FD2AF3 /* MyProductDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProductDetailScreen.swift; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 		F7BD2B202D5C332B00E2BF29 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				F7BD2B212D5C334400E2BF29 /* Uploader.swift */,
+				F7BD2B212D5C334400E2BF29 /* UploaderDownloader.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -322,7 +322,7 @@
 				F7EF477B2D4C2192003123E8 /* HTTPClient.swift in Sources */,
 				F7EF477C2D4C2192003123E8 /* AuthenticationController.swift in Sources */,
 				F7EF477D2D4C2192003123E8 /* AuthenticationEnvironmentKey.swift in Sources */,
-				F7BD2B222D5C334400E2BF29 /* Uploader.swift in Sources */,
+				F7BD2B222D5C334400E2BF29 /* UploaderDownloader.swift in Sources */,
 				F7EF477E2D4C2192003123E8 /* String+Ext.swift in Sources */,
 				F73288072D51627000A33C24 /* AddProductScreen.swift in Sources */,
 				F7CE97902D696D6000FD2AF3 /* MyProductDetailScreen.swift in Sources */,
