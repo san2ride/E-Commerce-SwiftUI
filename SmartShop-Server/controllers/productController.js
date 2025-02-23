@@ -106,7 +106,6 @@ exports.deleteProduct = async (req, res) => {
             return res.status(404).json({ message: 'Product not found', success: false });
         }
         const fileName = getFileNameFromUrl(product.photo_url)
-
         // delete the product 
         const result = models.Product.destroy({
             where: {
