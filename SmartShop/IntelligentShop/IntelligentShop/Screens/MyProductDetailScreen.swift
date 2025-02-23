@@ -12,6 +12,8 @@ struct MyProductDetailScreen: View {
     @Environment(ProductStore.self) private var productStore
     @Environment(\.dismiss) private var dismiss
     
+    @State private var isPresented: Bool = false
+    
     private func deleteProduct() async {
         do {
             try await productStore.deleteProduct(product)
@@ -52,6 +54,18 @@ struct MyProductDetailScreen: View {
                     .cornerRadius(25)
             }.buttonStyle(.borderedProminent)
         }.padding()
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Update") {
+                        isPresented = true
+                    }
+                }
+            }
+            .sheet(isPresented: $isPresented) {
+                NavigationStack {
+                    AddProductScreen(product: product)
+                }
+            }
     }
 }
 
