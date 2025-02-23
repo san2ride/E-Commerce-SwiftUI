@@ -99,29 +99,27 @@ exports.deleteProduct = async (req, res) => {
         const msg = errors.array().map(error => error.msg).join('')
         return res.status(422).json({ message: msg, success: false });
     }
-
     const productId = req.params.productId
-
     try {
-        const product = await models.Product.findByPK(productId)
-        if (!product) {
+        const product = await models.Product.findByPk(productId)
+        if(!product) {
             return res.status(404).json({ message: 'Product not found', success: false });
         }
         const fileName = getFileNameFromUrl(product.photo_url)
 
-        // delete the product
+        // delete the product 
         const result = models.Product.destroy({
             where: {
                 id: productId
             }
         })
-        if (result == 0) {
+        if(result == 0) {
             return res.status(404).json({ message: 'Product not found', success: false });
         }
-        // delete the file
+        // delete the file 
         await deleteFile(fileName)
 
-        return res.status(200).json({ message: `Product with ID ${productId} deleted succesfully`, success: true });
+        return res.status(200).json({ message: `Product with ID ${productId} deleted successfully`, success: true });
     } catch (err) {
         return res.status(500).json({ message: `Error deleting product ${error.message} `, success: false });
     }
