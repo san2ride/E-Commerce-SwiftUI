@@ -33,15 +33,15 @@ const updateProductValidator = [
 
 // /api/products
 router.get('/', productController.getAllProducts)
-router.post('/', productValidator, productController.create)
+router.post('/', authenticate, productValidator, productController.create)
 router.get('/user/:userId', authenticate, productController.getMyProducts)
 
-router.post('/upload', productController.upload)
+router.post('/upload', authenticate, productController.upload)
 
 // DELETE /api/products/34
-router.delete('/:productId', deleteProductValidator, productController.deleteProduct)
+router.delete('/:productId'. authenticate, deleteProductValidator, productController.deleteProduct)
 
 // PUT
-router.put('/:productId', updateProductValidator, productController.updateProduct)
+router.put('/:productId', authenticate, updateProductValidator, productController.updateProduct)
 
 module.exports = router
