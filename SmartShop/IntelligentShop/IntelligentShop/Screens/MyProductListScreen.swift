@@ -49,7 +49,7 @@ struct MyProductListScreen: View {
         })
         .overlay(alignment: .center) {
             if let message {
-                Text(message)
+                // Text(message)
             } else if productStore.myProducts.isEmpty {
                 ContentUnavailableView("No products available", systemImage: "skull")
             }
