@@ -39,7 +39,7 @@ router.get('/user/:userId', authenticate, productController.getMyProducts)
 router.post('/upload', authenticate, productController.upload)
 
 // DELETE /api/products/34
-router.delete('/:productId'. authenticate, deleteProductValidator, productController.deleteProduct)
+router.delete('/:productId', authenticate, deleteProductValidator, productController.deleteProduct)
 
 // PUT
 router.put('/:productId', authenticate, updateProductValidator, productController.updateProduct)
