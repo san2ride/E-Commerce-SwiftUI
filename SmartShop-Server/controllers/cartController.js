@@ -1,24 +1,24 @@
 const { where } = require('sequelize')
 const models = require('../models')
 
-exports.loadCart = async (res, req) => {
+exports.loadCart = async (req, res) => {
     try {
         const cart = await models.Cart.findOne({
             where: {
-                user_id: 9,
+                user_id: 9, // MAKE SURE TO CHANGE THAT to request.userId
                 is_active: true
-            },
-            attributes: ['id', 'user_id', 'is_active'],
+            }, 
+            attributes: ['id', 'user_id', 'is_active'], 
             include: [
                 {
-                    model: models.CartItem,
-                    as: 'cartItems',
-                    attributes: ['id', 'cart_id', 'product_id', 'quantity'],
+                    model: models.CartItem, 
+                    as: 'cartItems', 
+                    attributes: ['id', 'cart_id', 'product_id', 'quantity'], 
                     include: [
                         {
                             model: models.Product,
-                            as: 'product',
-                            attributes: ['id', 'name', 'description', 'price', 'photo_url', 'user_id']
+                            as: 'product', 
+                            attributes: ['id', 'name', 'description', 'price', 'photo_url', 'user_id'] 
                         }
                     ]
                 }
