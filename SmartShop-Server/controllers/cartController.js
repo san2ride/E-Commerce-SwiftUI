@@ -1,6 +1,35 @@
 const { where } = require('sequelize')
 const models = require('../models')
 
+exports.loadCart = async (res, req) => {
+    try {
+        const cart = await models.Cart.findOne({
+            where: {
+                user_id: 9,
+                is_active: true
+            },
+            attributes: ['id', 'user_id', 'is_active'],
+            include: [
+                {
+                    model: models.CartItem,
+                    as: 'cartItems',
+                    attributes: ['id', 'cart_id', 'product_id', 'quantity'],
+                    include: [
+                        {
+                            model: models.Product,
+                            as: 'product',
+                            attributes: ['id', 'name', 'description', 'price', 'photo_url', 'user_id']
+                        }
+                    ]
+                }
+            ]
+        })
+        res.status(200).json({ cart: cart, success: true })
+    } catch (error) {
+        res.status(500).json({ message: error, success: false });
+    }
+}
+
 exports.addCartItem = async (req, res) => {
     const { productId, quantity } = req.body 
     req.userId = 9 // hard-coded 
