@@ -81,9 +81,9 @@ struct UpdateProductResponse: Codable {
 }
 
 struct Cart: Codable {
-    let id: Int?
+    var id: Int?
     let userId: Int
-    let cartItems: [CartItem] = []
+    var cartItems: [CartItem] = []
     
     private enum CodingKeys: String, CodingKey {
         case id, cartItems
@@ -100,4 +100,5 @@ struct CartItem: Codable, Identifiable {
 struct CartItemResponse: Codable {
     let message: String?
     let success: Bool
+    let cartItem: CartItem?
 }

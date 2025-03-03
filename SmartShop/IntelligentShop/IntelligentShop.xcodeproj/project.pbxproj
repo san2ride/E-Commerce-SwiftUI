@@ -18,6 +18,7 @@
 		F7CAF1C02D513E8400F6120F /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CAF1BF2D513E8400F6120F /* Errors.swift */; };
 		F7CE97902D696D6000FD2AF3 /* MyProductDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CE978F2D696D6000FD2AF3 /* MyProductDetailScreen.swift */; };
 		F7D4DF462D642EF20080C995 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D4DF452D642EF20080C995 /* ImagePicker.swift */; };
+		F7E2DD032D763672006548A1 /* UserDefaults+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E2DD022D763672006548A1 /* UserDefaults+Ext.swift */; };
 		F7EF47792D4C2192003123E8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7EF47662D4C2192003123E8 /* Preview Assets.xcassets */; };
 		F7EF477A2D4C2192003123E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7EF47752D4C2192003123E8 /* Assets.xcassets */; };
 		F7EF477B2D4C2192003123E8 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EF475C2D4C2192003123E8 /* HTTPClient.swift */; };
@@ -51,6 +52,7 @@
 		F7CAF1BF2D513E8400F6120F /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		F7CE978F2D696D6000FD2AF3 /* MyProductDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProductDetailScreen.swift; sourceTree = "<group>"; };
 		F7D4DF452D642EF20080C995 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		F7E2DD022D763672006548A1 /* UserDefaults+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Ext.swift"; sourceTree = "<group>"; };
 		F7EF475C2D4C2192003123E8 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		F7EF475E2D4C2192003123E8 /* AuthenticationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationController.swift; sourceTree = "<group>"; };
 		F7EF47602D4C2192003123E8 /* AuthenticationEnvironmentKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationEnvironmentKey.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				F7EF47622D4C2192003123E8 /* String+Ext.swift */,
+				F7E2DD022D763672006548A1 /* UserDefaults+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				F7BD2B242D5C3CF700E2BF29 /* UploaderEnviromentKey.swift in Sources */,
 				F7EF47902D4C27C6003123E8 /* ProductCellView.swift in Sources */,
 				F7EF47852D4C2192003123E8 /* Constants.swift in Sources */,
+				F7E2DD032D763672006548A1 /* UserDefaults+Ext.swift in Sources */,
 				F7EF47862D4C2192003123E8 /* KeyChainWrapper.swift in Sources */,
 				F7EF47872D4C2192003123E8 /* JWTTokenValidator.swift in Sources */,
 				F73288052D515FB200A33C24 /* MyProductListScreen.swift in Sources */,
