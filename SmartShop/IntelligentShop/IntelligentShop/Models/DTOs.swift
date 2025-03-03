@@ -48,10 +48,10 @@ struct Product: Codable, Identifiable {
 
 extension Product {
     static var preview: Product {
-        Product(id: 1, name: "RESIDENTIAL PEST CONTROL",
+        Product(id: 17, name: "RESIDENTIAL PEST CONTROL",
                 description: "We offer comprehensive pest control solutions for your home, ensuring a safe, comfortable environment free from unwanted pests..",
                 price: 200,
-                photoUrl: URL(string: "http://localhost:8080/api/uploads/star_pest.png")!,
+                photoUrl: URL(string: "http://localhost:8080/api/uploads/image-1740274914055.png")!,
                 userId: 8)
     }
     func encode() -> Data? {
