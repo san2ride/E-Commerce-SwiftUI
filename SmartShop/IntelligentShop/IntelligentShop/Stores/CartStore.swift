@@ -27,6 +27,9 @@ class CartStore {
             total + cartItem.quantity
         }) ?? 0
     }
+    func emptyCart() {
+        cart?.cartItems = []
+    }
     func deleteCartItem(cartItemId: Int) async throws {
         let resource = Resource(url: Constants.Urls.deleteCartItem(cartItemId),
                                 method: .delete,
