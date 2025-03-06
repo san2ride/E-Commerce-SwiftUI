@@ -14,16 +14,15 @@ struct CartScreen: View {
         List {
             if let cart = cartStore.cart {
                 HStack {
-                   Text("Total: ")
+                    Text("Total: ")
                         .font(.title)
                     Text(cartStore.total, format: .currency(code: "USD"))
                         .font(.title)
                         .bold()
                 }
-                
                 Button(action: {
-                }) {
                     
+                }) {
                     Text("Proceed to checkout ^[(\(cartStore.itemsCount) Item](inflect: true))")
                         .bold()
                         .frame(maxWidth: .infinity)
