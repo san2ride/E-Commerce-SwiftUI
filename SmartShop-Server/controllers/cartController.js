@@ -23,7 +23,7 @@ exports.loadCart = async (req, res) => {
     try {
         const cart = await models.Cart.findOne({
             where: {
-                user_id: 9, // MAKE SURE TO CHANGE THAT to request.userId
+                user_id: req.userId, // MAKE SURE TO CHANGE THAT to request.userId
                 is_active: true
             }, 
             attributes: ['id', 'user_id', 'is_active'], 
@@ -50,7 +50,7 @@ exports.loadCart = async (req, res) => {
 
 exports.addCartItem = async (req, res) => {
     const { productId, quantity } = req.body 
-    req.userId = 9 // hard-coded 
+    req.userId = req.userId // hard-coded 
     try {
         // get the cart based on userId is_active: true 
         let cart = await models.Cart.findOne({
