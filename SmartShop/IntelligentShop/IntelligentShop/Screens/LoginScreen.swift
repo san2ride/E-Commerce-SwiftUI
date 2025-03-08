@@ -60,7 +60,6 @@ struct LoginScreen: View {
                         .foregroundColor(.white)
                 }
                 .padding(.top, 40)
-                
                 // Login Card
                 VStack(spacing: 20) {
                     // Username Field
@@ -75,7 +74,6 @@ struct LoginScreen: View {
                                 .stroke(Color.green.opacity(0.5), lineWidth: 1)
                         )
                         .autocorrectionDisabled()
-                    
                     // Password Field
                     SecureField("Password", text: $password)
                         .textFieldStyle(PlainTextFieldStyle())
@@ -112,9 +110,7 @@ struct LoginScreen: View {
                 .cornerRadius(15)
                 .shadow(color: .black.opacity(0.2), radius: 10, x: 0, y: 5)
                 .padding(.horizontal, 30)
-                
                 Spacer()
-                
                 // Additional Options
                 HStack(spacing: 20) {
                     Button("Forgot Password?") {
