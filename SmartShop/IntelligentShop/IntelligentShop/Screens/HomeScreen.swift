@@ -70,6 +70,7 @@ struct HomeScreen: View {
                     .badge((screen as AppScreen?) == .cart ? cartStore.itemsCount: 0 )
             }
         }
+        .tint(.red)
     }
 }
 

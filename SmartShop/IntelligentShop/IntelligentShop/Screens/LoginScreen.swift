@@ -94,7 +94,7 @@ struct LoginScreen: View {
                             .fontWeight(.semibold)
                             .frame(maxWidth: .infinity)
                             .padding()
-                            .background(isFormValid ? Color.green : Color.red)
+                            .background(isFormValid ? Color.blue : Color.red)
                             .foregroundColor(.white)
                             .cornerRadius(10)
                     }
