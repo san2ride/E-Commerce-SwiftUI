@@ -59,7 +59,6 @@ struct ProfileScreen: View {
         }
         return validationErrors.isEmpty
     }
-    
     private func updateUserInfo() async {
         do {
             let userInfo = UserInfo(firstName: firstName,
@@ -74,7 +73,6 @@ struct ProfileScreen: View {
             print(error.localizedDescription)
         }
     }
-    
     var body: some View {
         ZStack {
             // Background gradient
