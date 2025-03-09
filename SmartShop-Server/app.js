@@ -23,7 +23,7 @@ app.use('/api/products', productRoutes)
 // cart routes
 app.use('/api/cart', authenticate, cartRoutes)
 // user routes
-app.use('/api/user', userRoutes)
+app.use('/api/user', authenticate, userRoutes)
 // start the server
 app.listen(8080, () => {
     console.log("Server is running.")
