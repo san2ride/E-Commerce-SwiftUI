@@ -217,7 +217,19 @@ struct ProfileScreen: View {
                                     .foregroundColor(.white)
                                     .cornerRadius(10)
                             }
+                            .onChange(of: userStore.userInfo, initial: true, {
+                                if let userInfo = userStore.userInfo {
+                                    firstName = userInfo.firstName ?? ""
+                                    lastName = userInfo.lastName ?? ""
+                                    street = userInfo.street ?? ""
+                                    city = userInfo.city ?? ""
+                                    state = userInfo.state ?? ""
+                                    zipCode = userInfo.zipCode ?? ""
+                                    country = userInfo.country ?? ""
+                                }
+                            })
                         }
+                        
                     }
                     .padding(.horizontal, 30)
                     .padding(.bottom, 20)
@@ -225,17 +237,6 @@ struct ProfileScreen: View {
             }
             .shadow(color: .black.opacity(0.2), radius: 10, x: 0, y: 5)
         }
-        .onChange(of: userStore.userInfo, initial: true, {
-            if let userInfo = userStore.userInfo {
-                firstName = userInfo.firstName ?? ""
-                lastName = userInfo.lastName ?? ""
-                street = userInfo.street ?? ""
-                city = userInfo.city ?? ""
-                state = userInfo.state ?? ""
-                zipCode = userInfo.zipCode ?? ""
-                country = userInfo.country ?? ""
-            }
-        })
         .navigationBarHidden(true)
         .task(id: updatingUserInfo) {
             if updatingUserInfo {
