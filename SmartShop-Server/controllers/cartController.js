@@ -1,6 +1,20 @@
-const { where } = require('sequelize')
 const models = require('../models')
 
+exports.removeCartItems = async (cartId, transaction) => {
+    return await models.CartItem.destroy({
+        where: { cart_id: cartId }, 
+        transaction
+    })
+}
+exports.updateCartStatus = async (cartId, isActive, transaction) => {
+   return await models.Cart.update(
+    { is_active: isActive }, 
+    {
+        where: { id: cartId, is_active: !isActive }, 
+        transaction
+    }
+   )
+}
 exports.removeCartItem = async (req, res) => {
     try {
         const { cartItemId } = req.params
@@ -18,7 +32,6 @@ exports.removeCartItem = async (req, res) => {
         res.status(500).json({ message: 'An error occurred while removing the cart item', success: false });
     }
 }
-
 exports.loadCart = async (req, res) => {
     try {
         const cart = await models.Cart.findOne({
@@ -47,7 +60,6 @@ exports.loadCart = async (req, res) => {
         res.status(500).json({ message: error, success: false });
     }
 }
-
 exports.addCartItem = async (req, res) => {
     const { productId, quantity } = req.body 
     req.userId = req.userId // hard-coded 
