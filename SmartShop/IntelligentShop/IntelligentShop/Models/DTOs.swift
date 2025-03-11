@@ -187,6 +187,18 @@ struct UserInfo: Codable, Equatable {
         case zipCode = "zip_code"
         case street, city, state, country
     }
+    var fullName: String {
+        [firstName, lastName]
+            .compactMap { $0 }
+            .joined(separator: " ")
+    }
+    var address: String {
+        [
+            street,
+            [city, state].compactMap { $0 }.joined(separator: " "),
+            country
+        ].compactMap { $0 }.joined(separator: " ")
+    }
 }
 
 struct UserInfoResponse: Codable {
