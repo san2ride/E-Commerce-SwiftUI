@@ -15,12 +15,14 @@ struct AddProductScreen: View {
     @State private var name: String = ""
     @State private var description: String = ""
     @State private var price: Double?
+    @Environment(\.dismiss) private var dismiss
     @State private var selectedPhotoItem: PhotosPickerItem? = nil
     @State private var isCameraSelected: Bool = false
     @State private var uiImage: UIImage?
     
-    @Environment(\.dismiss) private var dismiss
+    
     @Environment(\.uploaderDownloader) private var uploaderDownloader
+    
     @Environment(ProductStore.self) private var productStore
     @AppStorage("userId") private var userId: Int?
     
@@ -58,7 +60,6 @@ struct AddProductScreen: View {
             } else {
                 try await productStore.saveProduct(product)
             }
-            try await productStore.saveProduct(product)
             dismiss()
         } catch {
             print(error.localizedDescription)
