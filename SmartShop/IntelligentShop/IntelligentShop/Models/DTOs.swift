@@ -129,12 +129,12 @@ extension Cart {
     static var preview: Cart {
         return Cart(
             id: 1,
-            userId: 101,
+            userId: 9,
             cartItems: [
                 CartItem(
                     id: 1,
                     product: Product(
-                        id: 201,
+                        id: 25,
                         name: "Coffee",
                         description: "A rich, aromatic blend of premium coffee beans.",
                         price: 5.99,
@@ -146,7 +146,7 @@ extension Cart {
                 CartItem(
                     id: 2,
                     product: Product(
-                        id: 202,
+                        id: 20,
                         name: "Tea",
                         description: "Refreshing green tea with hints of mint.",
                         price: 3.49,
@@ -158,7 +158,7 @@ extension Cart {
                 CartItem(
                     id: 3,
                     product: Product(
-                        id: 203,
+                        id: 15,
                         name: "Hot Chocolate",
                         description: "Smooth and creamy hot chocolate.",
                         price: 4.99,
