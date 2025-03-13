@@ -176,7 +176,6 @@ struct ProfileScreen: View {
                         .padding()
                         .background(Color.white.opacity(0.2))
                         .cornerRadius(15)
-                        
                         // Validation Errors
                         if !validationErrors.isEmpty {
                             VStack(spacing: 5) {

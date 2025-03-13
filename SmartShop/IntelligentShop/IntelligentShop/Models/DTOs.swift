@@ -52,7 +52,7 @@ extension Product {
                 description: "We offer comprehensive pest control solutions for your home, ensuring a safe, comfortable environment free from unwanted pests..",
                 price: 200,
                 photoUrl: URL(string: "http://localhost:8080/api/uploads/image-1740274914055.png")!,
-                userId: 8)
+                userId: 9)
     }
     func encode() -> Data? {
         try? JSONEncoder().encode(self)
