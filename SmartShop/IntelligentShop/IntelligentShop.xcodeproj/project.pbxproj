@@ -53,6 +53,7 @@
 		F7EF478A2D4C2192003123E8 /* IntelligentShopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EF47772D4C2192003123E8 /* IntelligentShopApp.swift */; };
 		F7EF478D2D4C21D2003123E8 /* ProductStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EF478C2D4C21D2003123E8 /* ProductStore.swift */; };
 		F7EF47902D4C27C6003123E8 /* ProductCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EF478F2D4C27C6003123E8 /* ProductCellView.swift */; };
+		F7FB8D502D83D02D00638C6F /* PaymentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB8D4F2D83D02D00638C6F /* PaymentController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +94,7 @@
 		F7EF47772D4C2192003123E8 /* IntelligentShopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntelligentShopApp.swift; sourceTree = "<group>"; };
 		F7EF478C2D4C21D2003123E8 /* ProductStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductStore.swift; sourceTree = "<group>"; };
 		F7EF478F2D4C27C6003123E8 /* ProductCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCellView.swift; sourceTree = "<group>"; };
+		F7FB8D4F2D83D02D00638C6F /* PaymentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				F7EF475E2D4C2192003123E8 /* AuthenticationController.swift */,
+				F7FB8D4F2D83D02D00638C6F /* PaymentController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				F7EF477E2D4C2192003123E8 /* String+Ext.swift in Sources */,
 				F7E4B5642D79359900FBABBC /* CartItemQuantityView.swift in Sources */,
 				F73288072D51627000A33C24 /* AddProductScreen.swift in Sources */,
+				F7FB8D502D83D02D00638C6F /* PaymentController.swift in Sources */,
 				F7CE97902D696D6000FD2AF3 /* MyProductDetailScreen.swift in Sources */,
 				F7EF477F2D4C2192003123E8 /* DTOs.swift in Sources */,
 				F73174AC2D7D41CB004A50FD /* UserStore.swift in Sources */,
