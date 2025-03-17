@@ -29,6 +29,6 @@ exports.createPaymentIntent = async (req, res) => {
         paymentIntent: paymentIntent.client_secret,
         ephemeralKey: ephemeralKey.secret,
         customer: customer.id,
-        publishableKey: 'pk_test_51R22abE4O1zcTMv8YcECJrmR9VinRJ7ejjhSa3Go3aKqtkvVfavTXvclDRxxLjKPOWqc67pSNhfEe8hSjLn0dPrX00WGE9R1uL'
+        publishableKey: 'pk_test_51R22abE4O1zcTMv8CKmcLG30ROmNay0XSfQSpzQ1j4mk2a7gYoNDtbNWXp6HmJz6xtfHjVHRJzPXUPB8G6XD48WF00CylbmXs0'
     })
 }
