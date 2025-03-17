@@ -6,11 +6,18 @@
 //
 
 import SwiftUI
+import StripePaymentSheet
 
 struct CheckoutScreen: View {
     let cart: Cart
     
+    @Environment(\.paymentController) private var paymentController
     @Environment(UserStore.self) private var userStore
+    @State private var paymentSheet: PaymentSheet?
+    
+    private func paymentCompletion(result: PaymentSheetResult) {
+        print(result)
+    }
     
     var body: some View {
         ZStack {
@@ -86,6 +93,27 @@ struct CheckoutScreen: View {
                                             .stroke(Color.blue.opacity(0.5), lineWidth: 1)
                                     )
                             }
+                            if let paymentSheet {
+                                PaymentSheet.PaymentButton(paymentSheet: paymentSheet,
+                                                           onCompletion: paymentCompletion) {
+                                    Text("Place your order")
+                                        .bold()
+                                        .frame(maxWidth: .infinity)
+                                        .padding()
+                                        .background(Color.red)
+                                        .foregroundStyle(.white)
+                                        .cornerRadius(8)
+                                        .padding()
+                                        .buttonStyle(.borderless)
+                                    
+                                }
+                            }
+                        }.task {
+                            do {
+                                paymentSheet = try await paymentController.preparePaymentSheet(for: cart)
+                            } catch {
+                                print(error.localizedDescription)
+                            }
                         }
                         .padding()
                         .background(Color.white.opacity(0.2))
@@ -107,4 +135,5 @@ struct CheckoutScreen: View {
     }
     .environment(UserStore(httpClient: .development))
     .environment(CartStore(httpClient: .development))
+    .environment(\.paymentController, PaymentController(httpClient: .development))
 }

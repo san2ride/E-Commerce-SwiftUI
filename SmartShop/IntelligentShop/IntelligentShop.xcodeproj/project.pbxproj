@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F7095B392D889F6B0032308E /* PaymentControllerEnviromentKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7095B382D889F6B0032308E /* PaymentControllerEnviromentKey.swift */; };
+		F7095B3B2D88AA020032308E /* .env in Resources */ = {isa = PBXBuildFile; fileRef = F7095B3A2D88AA020032308E /* .env */; };
 		F71AB3A12D4820D800A4522E /* JWTDecode in Frameworks */ = {isa = PBXBuildFile; productRef = F71AB3A02D4820D800A4522E /* JWTDecode */; };
 		F73174AC2D7D41CB004A50FD /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73174AB2D7D41CB004A50FD /* UserStore.swift */; };
 		F73288052D515FB200A33C24 /* MyProductListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73288042D515FB200A33C24 /* MyProductListScreen.swift */; };
@@ -57,6 +59,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F7095B382D889F6B0032308E /* PaymentControllerEnviromentKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentControllerEnviromentKey.swift; sourceTree = "<group>"; };
+		F7095B3A2D88AA020032308E /* .env */ = {isa = PBXFileReference; lastKnownFileType = text; path = .env; sourceTree = "<group>"; };
 		F73174AB2D7D41CB004A50FD /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
 		F73288042D515FB200A33C24 /* MyProductListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProductListScreen.swift; sourceTree = "<group>"; };
 		F73288062D51627000A33C24 /* AddProductScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductScreen.swift; sourceTree = "<group>"; };
@@ -172,6 +176,7 @@
 			children = (
 				F7BD2B232D5C3CF400E2BF29 /* UploaderEnviromentKey.swift */,
 				F7EF47602D4C2192003123E8 /* AuthenticationEnvironmentKey.swift */,
+				F7095B382D889F6B0032308E /* PaymentControllerEnviromentKey.swift */,
 			);
 			path = "Enviroment Values";
 			sourceTree = "<group>";
@@ -264,6 +269,7 @@
 				F7EF47752D4C2192003123E8 /* Assets.xcassets */,
 				F7EF47672D4C2192003123E8 /* Preview Content */,
 				F7EF47772D4C2192003123E8 /* IntelligentShopApp.swift */,
+				F7095B3A2D88AA020032308E /* .env */,
 			);
 			path = IntelligentShop;
 			sourceTree = "<group>";
@@ -365,6 +371,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7095B3B2D88AA020032308E /* .env in Resources */,
 				F7EF47792D4C2192003123E8 /* Preview Assets.xcassets in Resources */,
 				F7EF477A2D4C2192003123E8 /* Assets.xcassets in Resources */,
 			);
@@ -378,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7EF477B2D4C2192003123E8 /* HTTPClient.swift in Sources */,
+				F7095B392D889F6B0032308E /* PaymentControllerEnviromentKey.swift in Sources */,
 				F7B582E92D76A1B500E271DC /* CartItemView.swift in Sources */,
 				F7EF477C2D4C2192003123E8 /* AuthenticationController.swift in Sources */,
 				F7EF477D2D4C2192003123E8 /* AuthenticationEnvironmentKey.swift in Sources */,

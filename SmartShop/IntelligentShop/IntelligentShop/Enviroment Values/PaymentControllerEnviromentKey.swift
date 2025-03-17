@@ -6,3 +6,8 @@
 //
 
 import Foundation
+import SwiftUI
+
+extension EnvironmentValues {
+    @Entry var paymentController = PaymentController(httpClient: HTTPClient())
+}
