@@ -124,7 +124,7 @@ struct CheckoutScreen: View {
                                     Text("Place Your Order")
                                         .fontWeight(.bold)
                                         .frame(maxWidth: .infinity)
-                                        //.padding()
+                                        .padding()
                                         .background(Color.blue) // Matches app theme
                                         .foregroundColor(.white)
                                         .cornerRadius(10)
