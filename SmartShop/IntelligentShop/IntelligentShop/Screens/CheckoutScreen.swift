@@ -66,7 +66,7 @@ struct CheckoutScreen: View {
                     VStack(spacing: 20) {
                         // Order Summary Section
                         VStack(spacing: 15) {
-                            Text("Place Your Order")
+                            Text("Order Total")
                                 .font(.title3)
                                 .fontWeight(.semibold)
                                 .foregroundColor(.white)
@@ -129,7 +129,7 @@ struct CheckoutScreen: View {
                                         .foregroundColor(.white)
                                         .cornerRadius(10)
                                 }
-                                .padding(.horizontal, 15) // Matches inner card padding
+                                //.padding(.horizontal, 15) // Matches inner card padding
                             }
                         }
                         .padding()

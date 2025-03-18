@@ -73,7 +73,7 @@ exports.addCartItem = async (req, res) => {
         })
         if(!cart) {
             // create a new cart 
-            cart = models.Cart.create({
+            cart = await models.Cart.create({
                 user_id: req.userId, 
                 is_active: true 
             })
