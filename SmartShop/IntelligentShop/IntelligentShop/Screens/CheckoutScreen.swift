@@ -146,7 +146,7 @@ struct CheckoutScreen: View {
             OrderConfirmationScreen()
                 .navigationBarBackButtonHidden()
         }
-        .task {
+        .task(id: cart) {
             do {
                 paymentSheet = try await paymentController.preparePaymentSheet(for: cart)
             } catch {

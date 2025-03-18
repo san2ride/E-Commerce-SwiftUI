@@ -80,7 +80,7 @@ struct UpdateProductResponse: Codable {
     let message: String?
 }
 
-struct Cart: Codable {
+struct Cart: Codable, Hashable {
     var id: Int?
     let userId: Int
     var cartItems: [CartItem] = []
@@ -107,7 +107,7 @@ struct CartResponse: Codable {
     let cart: Cart?
 }
 
-struct CartItem: Codable, Identifiable {
+struct CartItem: Codable, Identifiable, Hashable {
     let id: Int?
     let product: Product
     var quantity: Int = 1
